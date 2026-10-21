@@ -1,0 +1,27 @@
+// Mapear schemas essenciais no
+// Prisma ORM: tabelas `Usuario`
+// e `Mensagem`.
+
+generator client {
+  provider = "prisma-client-js"
+} 
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id        Int        @id @default(autoincrement())
+  telefone  String     @unique
+  nome      String?
+  mensagens Mensagem[]
+}
+
+model Mensagem {
+  id         Int      @id @default(autoincrement())
+  texto      String
+  usuarioId  Int
+  criadaEm   DateTime @default(now())
+  usuario    Usuario  @relation(fields: [usuarioId], references: [id])
+}
