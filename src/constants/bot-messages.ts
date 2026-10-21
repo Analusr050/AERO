@@ -6,7 +6,7 @@
 // templates e preparar respostas
 // estáticas de teste.
 
-import { ContratoMensagensMVP } from '@/types/whatsapp';
+import type { ContratoMensagensMVP } from '@/types/whatsapp';
 
 export const BOT_MESSAGES: ContratoMensagensMVP = {
   saudacao: 'Olá! Seja bem-vindo ao sistema AERO.',
