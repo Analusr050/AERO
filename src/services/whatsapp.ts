@@ -1,8 +1,3 @@
-// Estruturar serviço básico no
-// backend para envio de
-// solicitações HTTP à API do
-// WhatsApp.
-
 export async function enviarMensagemWhatsApp(numeroDestino: string, texto: string) {
   const token = process.env.WHATSAPP_TOKEN;
   const phoneId = process.env.WHATSAPP_PHONE_ID;

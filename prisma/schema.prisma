@@ -1,14 +1,9 @@
-// Mapear schemas essenciais no
-// Prisma ORM: tabelas `Usuario`
-// e `Mensagem`.
-
 generator client {
   provider = "prisma-client-js"
 } 
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model Usuario {
