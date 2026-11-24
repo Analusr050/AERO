@@ -1,7 +1,7 @@
-import type { ContratoMensagensMVP } from '@/types/whatsapp';
+import type { ContratoMensagensMVP } from "@/types/whatsapp";
 
 export const BOT_MESSAGES: ContratoMensagensMVP = {
-  saudacao: 'Olá! Seja bem-vindo ao sistema AERO.',
+  saudacao: "Olá! Seja bem-vindo ao sistema AERO.",
 
   menuOpcoes: `Como podemos te ajudar hoje?
 
@@ -11,9 +11,9 @@ export const BOT_MESSAGES: ContratoMensagensMVP = {
 
 Digite o número da opção desejada.`,
 
-  despedida: 'Atendimento finalizado. Obrigado por utilizar o AERO!',
+  despedida: "Atendimento finalizado. Obrigado por utilizar o AERO!",
 
-  opcaoInvalida: 'Opção não reconhecida. Por favor, escolha um número do menu.',
+  opcaoInvalida: "Opção não reconhecida. Por favor, escolha um número do menu.",
 };
 
 export const SAUDACAO_AUTOMATICA =
@@ -25,16 +25,16 @@ export const SAUDACAO_AUTOMATICA =
   `_Caso não queira fazer um pedido agora, é só nos avisar!_`;
 
 export function montarSaudacaoComLink(linkCardapio: string): string {
-  return SAUDACAO_AUTOMATICA.replace('{{link_cardapio}}', linkCardapio);
+  return SAUDACAO_AUTOMATICA.replace("{{link_cardapio}}", linkCardapio);
 }
 
 export const PALAVRAS_CONFIRMACAO: string[] = [
-  'confirmar',
-  'confirmo',
-  'quero',
-  'sim',
-  'pedido',
-  'fazer pedido',
+  "confirmar",
+  "confirmo",
+  "quero",
+  "sim",
+  "pedido",
+  "fazer pedido",
 ];
 
 export const MENSAGEM_INSTRUCAO =
@@ -50,7 +50,7 @@ export const MENSAGEM_CONFIRMACAO_PEDIDO =
   `_Para acompanhar o status, basta continuar conversando neste chat._`;
 
 /**
- * @param 
+ * @param
  */
 export function montarNotificacaoProprietario(telefoneCliente: string): string {
   return (

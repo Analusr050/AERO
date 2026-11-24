@@ -1,22 +1,34 @@
 generator client {
   provider = "prisma-client-js"
-} 
+}
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum DirecaoMensagem {
+  RECEBIDA
+  ENVIADA
 }
 
 model Usuario {
   id        Int        @id @default(autoincrement())
   telefone  String     @unique
   nome      String?
+  criadoEm  DateTime   @default(now())
   mensagens Mensagem[]
 }
 
 model Mensagem {
-  id         Int      @id @default(autoincrement())
+  id         Int             @id @default(autoincrement())
   texto      String
+  direcao    DirecaoMensagem
+  whatsappId String?         @unique
   usuarioId  Int
-  criadaEm   DateTime @default(now())
-  usuario    Usuario  @relation(fields: [usuarioId], references: [id])
+  criadaEm   DateTime        @default(now())
+  usuario    Usuario         @relation(fields: [usuarioId], references: [id])
+
+  @@index([usuarioId, criadaEm])
+  @@index([criadaEm])
 }

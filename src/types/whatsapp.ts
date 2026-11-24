@@ -1,8 +1,8 @@
 export interface MensagemTextoPayload {
-  messaging_product: 'whatsapp';
+  messaging_product: "whatsapp";
   to: string;
-  type: 'text';
-  text: {   
+  type: "text";
+  text: {
     body: string;
   };
 }
@@ -22,7 +22,7 @@ export interface WhatsAppMensagem {
   from: string;
   id: string;
   timestamp: string;
-  type: 'text' | 'image' | 'audio' | 'document' | 'interactive' | 'button';
+  type: "text" | "image" | "audio" | "document" | "interactive" | "button";
   text?: WhatsAppTextoRecebido;
 }
 
@@ -32,14 +32,14 @@ export interface WhatsAppMetadata {
 }
 
 export interface WhatsAppValue {
-  messaging_product: 'whatsapp';
+  messaging_product: "whatsapp";
   metadata: WhatsAppMetadata;
   messages?: WhatsAppMensagem[];
 }
 
 export interface WhatsAppChange {
   value: WhatsAppValue;
-  field: 'messages';
+  field: "messages";
 }
 
 export interface WhatsAppEntry {
@@ -48,7 +48,7 @@ export interface WhatsAppEntry {
 }
 
 export interface WhatsAppWebhookPayload {
-  object: 'whatsapp_business_account';
+  object: "whatsapp_business_account";
   entry: WhatsAppEntry[];
 }
 
